@@ -11,6 +11,8 @@ import { ProductsPage } from "../pages/client/ProductsPage";
 import { CartPage } from "../pages/client/CartPage";
 import { CheckoutPage } from "../pages/client/CheckoutPage";
 
+import { ProtectedRoute } from "../components/layout/ProtectedRoute";
+
 export function AppRoutes() {
   return (
     <Routes>
@@ -19,9 +21,15 @@ export function AppRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/unauthorized" element={<Unauthorized />} />
 
-      <Route path="/admin" element={<AdminDashboard />} />
-      <Route path="/admin/users" element={<UsersPage />} />
-      <Route path="/admin/products" element={<ProductsAdminPage />} />
+      <Route path="/admin" element={<ProtectedRoute allowedRoles={["admin"]}>
+        <AdminDashboard />
+      </ProtectedRoute>} />
+      <Route path="/admin/users" element={<ProtectedRoute allowedRoles={["admin"]}>
+        <UsersPage />
+      </ProtectedRoute>} />
+      <Route path="/admin/products" element={<ProtectedRoute allowedRoles={["admin"]}>
+        <ProductsAdminPage />
+      </ProtectedRoute>} />
 
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/cart" element={<CartPage />} />
