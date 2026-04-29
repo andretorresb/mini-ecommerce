@@ -346,16 +346,16 @@ export function UsersPage() {
                 className="grid gap-4 px-4 py-4 md:grid-cols-[1fr_1fr_140px_140px] md:items-center"
               >
                 <div>
-                  <h3 className="text-sm font-semibold text-zinc-900">
+                  <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                     {user.name.firstname} {user.name.lastname}
                   </h3>
 
-                  <p className="mt-1 text-xs text-zinc-500">
+                  <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
                     @{user.username}
                   </p>
                 </div>
 
-                <p className="text-sm text-zinc-600">{user.email}</p>
+                <p className="text-sm text-zinc-600 dark:text-zinc-100">{user.email}</p>
 
                 <span className="w-fit rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-700">
                   {user.role === "admin" ? "Admin" : "Cliente"}

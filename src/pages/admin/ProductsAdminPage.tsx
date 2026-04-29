@@ -290,15 +290,15 @@ export function ProductsAdminPage() {
           Nenhum produto cadastrado.
         </div>
       ) : (
-        <div className="overflow-hidden rounded-2xl border border-zinc-200">
-          <div className="hidden grid-cols-[80px_1fr_140px_140px] bg-zinc-50 px-4 py-3 text-sm font-semibold text-zinc-600 md:grid">
+        <div className="overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800">
+          <div className="hidden grid-cols-[80px_1fr_140px_140px] bg-zinc-50 px-4 py-3 text-sm font-semibold text-zinc-600 dark:bg-zinc-800 dark:text-zinc-200 md:grid">
             <span>Imagem</span>
             <span>Produto</span>
             <span>Preço</span>
             <span className="text-right">Ações</span>
           </div>
 
-          <div className="divide-y divide-zinc-200">
+          <div className="divide-y divide-zinc-200 dark:divide-zinc-800">
             {products.map((product) => (
               <article
                 key={product.id}
@@ -313,16 +313,16 @@ export function ProductsAdminPage() {
                 </div>
 
                 <div>
-                  <h3 className="line-clamp-2 text-sm font-semibold text-zinc-900">
+                  <h3 className="line-clamp-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                     {product.title}
                   </h3>
 
-                  <p className="mt-1 text-xs text-zinc-500">
+                  <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
                     {product.category}
                   </p>
                 </div>
 
-                <strong className="text-sm">
+                <strong className="text-sm text-zinc-900 dark:text-zinc-100">
                   {formatCurrency(product.price)}
                 </strong>
 
