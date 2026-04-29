@@ -1,11 +1,18 @@
 import type { Product } from "../../types/product";
 import { formatCurrency } from "../../utils/formatCurrency";
+import { useCart } from "../../hooks/useCart";
 
 interface ProductCardProps {
   product: Product;
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const { addToCart } = useCart();
+
+  function handleAddToCart() {
+    addToCart(product);
+  }
+
   return (
     <article className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
       <div className="flex h-48 items-center justify-center rounded-xl bg-zinc-50 p-4">
@@ -36,6 +43,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
           <button
             type="button"
+            onClick={handleAddToCart}
             className="mt-4 w-full rounded-xl bg-zinc-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-zinc-700 active:scale-[0.98]"
           >
             Adicionar ao carrinho
