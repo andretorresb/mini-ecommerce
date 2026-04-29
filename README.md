@@ -1,73 +1,64 @@
-# React + TypeScript + Vite
+# Mini E-commerce FakeStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido para teste técnico FrontEnd Junior.
 
-Currently, two official plugins are available:
+A aplicação simula um mini e-commerce utilizando a API pública FakeStore API, com autenticação, separação de usuários por perfil, painel administrativo e carrinho de compras.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologias utilizadas
 
-## React Compiler
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Context API
+- Axios
+- LocalStorage
+- Lucide React
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the ESLint configuration
+### Autenticação
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Login de usuários
+- Separação entre usuário administrador e cliente
+- Rotas protegidas por tipo de usuário
+- Persistência da sessão no LocalStorage
+- Logout
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Usuário administrador
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Dashboard com resumo de produtos e usuários
+- Listagem de produtos
+- Criação de produtos
+- Edição de produtos
+- Exclusão de produtos
+- Listagem de usuários
+- Criação de usuários
+- Edição de usuários
+- Exclusão de usuários
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Usuário cliente
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Listagem de produtos
+- Adicionar produtos ao carrinho
+- Alterar quantidade dos produtos no carrinho
+- Remover produtos do carrinho
+- Visualizar subtotal e total
+- Finalizar compra de forma mockada
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Interface
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Layout responsivo
+- Tema claro e escuro
+- Estados de loading, erro e vazio
+- Feedback visual em botões e interações
+- Acessibilidade básica com labels e textos alternativos
+
+## Contas de acesso
+
+### Administrador
+
+```txt
+username: mor_2314
+password: 83r5^_
