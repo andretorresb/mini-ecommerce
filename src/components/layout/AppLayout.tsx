@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { LogOut, Package, ShoppingCart, Users } from "lucide-react";
 
 import { useAuth } from "../../hooks/useAuth";
+import { useCart } from "../../hooks/useCart";
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -11,6 +12,7 @@ interface AppLayoutProps {
 export function AppLayout({ children }: AppLayoutProps) {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const { totalItems } = useCart();
 
   function handleLogout() {
     logout();
@@ -101,8 +103,15 @@ export function AppLayout({ children }: AppLayoutProps) {
                   }
                 >
                   <ShoppingCart size={16} />
-                  Carrinho
-                </NavLink>
+                  
+                  <span className="flex-1">Carrinho</span>
+                  
+                  {totalItems > 0 && (
+                  <span className="rounded-full bg-zinc-200 px-2 py-0.5 text-xs font-bold text-zinc-900">
+                    {totalItems}
+                  </span>
+                )}
+              </NavLink>
               </>
             )}
           </nav>
