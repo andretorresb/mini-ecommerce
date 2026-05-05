@@ -1,7 +1,5 @@
 # Mini E-commerce FakeStore
 
-Projeto desenvolvido para teste técnico FrontEnd Junior.
-
 A aplicação simula um mini e-commerce utilizando a API pública FakeStore API, com autenticação, separação de usuários por perfil, painel administrativo e carrinho de compras.
 
 ## Tecnologias utilizadas
